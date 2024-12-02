@@ -1,4 +1,4 @@
- # Bulliverse Chatbot
+ # Bullieverse Chatbot
 
 The **Bulliverse Chatbot** is an AI-powered assistant designed to enhance the **Bulliverse gaming platform**. It allows players to interact with the game using natural language, providing real-time, dynamic responses to game-related queries. The chatbot also integrates with the **Beyond API** to generate AI-powered content and assist with image creation, further enriching the gaming experience.
 
