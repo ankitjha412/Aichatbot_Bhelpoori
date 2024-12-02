@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+ # Bulliverse Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Bulliverse Chatbot** is an AI-powered assistant designed to enhance the **Bulliverse gaming platform**. It allows players to interact with the game using natural language, providing real-time, dynamic responses to game-related queries. The chatbot also integrates with the **Beyond API** to generate AI-powered content and assist with image creation, further enriching the gaming experience.
 
-## Available Scripts
+## Features
+- **Game-related queries**: The chatbot can answer questions about Bulliverse, its game mechanics, and NFTs.
+- **Image Generation**: The chatbot can generate images based on user prompts using the Beyond API.
+- **AI-Powered Content**: Uses **meta-llama/Meta-Llama-3-8B-Instruct-Turbo** to generate intelligent responses to user input.
+- **Easy Integration**: With the API routes set up, you can easily integrate new features or extend functionality.
+  
+## Tech Stack
+- **Backend**: Node.js, Express
+- **AI Integration**: Beyond API, meta-llama/Meta-Llama-3-8B-Instruct-Turbo
+- **Image Generation**: Beyond API (FLUX.1-schnell)
+- **API**: RESTful API
+- **Authentication**: API Keys for secure access to Beyond API
+- **Middleware**: Body Parser for JSON request handling
 
-In the project directory, you can run:
+## Setup Instructions
+To get the project up and running on your local machine, follow these steps:
 
-### `npm start`
+### Prerequisites
+- Node.js v16 or later
+- npm or yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/bullieverse-chatbot.git
+   cd bullieverse-chatbot
+2. **Install Dependencies: Use npm or yarn to install the required packages**:
+    ```bash
+    npm install
+    ```
+3. **Set Up API Key**:
+   ```
+   BEYOND_API_KEY=your-api-key-here
+   ```
+4. **Run the Application: Once everything is set up, start the server**:
+    ```
+    npm start
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**How to Use**
+1. Interact with the chatbot: Send a POST request to /api/chat/completions with a message asking about Bulliverse or the game mechanics.
+2. Generate Images: Use the /api/images/generate endpoint to create images based on specific prompts. For example, create images for NFTs, game characters, or environments.
+3. Check API Connectivity: Send a GET request to /api/test-beyond-api to ensure your server is correctly connected to the Beyond API.
 
-### `npm test`
+```
+Bulliverse-Chatbot/
+│
+├── backend/                  # Backend folder
+│   ├── node_modules/         # Node.js dependencies
+│   ├── src/                  # Source files
+│   │   ├── controllers/      # Logic for handling requests
+│   │   │   └── chatController.js  # Chat controller
+│   │   ├── routes/           # API routes
+│   │   │   └── chatRoutes.js    # Routes for handling chat requests
+│   │   ├── server.js         # Server entry point
+│   │   ├── app.js            # Main app file where routes are configured
+│   │   └── config.js         # Configuration file (API keys, URLs)
+│   ├── package.json          # Node.js project details and dependencies
+│   └── .env                  # Environment variables (e.g., API keys)
+│
+├── frontend/                 # Frontend folder
+│   ├── public/               # Public folder for static assets
+│   │   └── index.html        # Main HTML file
+│   ├── src/                  # Frontend source code
+│   │   ├── components/       # React components
+│   │   │   └── ChatComponent.js   # Component to display chat UI
+│   │   ├── App.js            # Main React application file
+│   │   ├── index.js          # Entry point for React app
+│   │   └── style.css         # CSS file for styling the frontend
+│   ├── package.json          # Frontend project details and dependencies
+│   └── .gitignore            # Git ignore file
+│
+├── README.md                # Project documentation
+└── .gitignore               # Ignore node_modules, .env, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+![image](https://github.com/user-attachments/assets/fd820c70-8c6e-44d9-977b-ba18fbfed9aa)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://github.com/user-attachments/assets/7e2496bf-01ee-4768-b147-9663b377ae21)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://github.com/user-attachments/assets/db49c570-d39c-48d5-842d-c60bc84a7141)
